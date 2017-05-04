@@ -8,7 +8,7 @@ Anax Session
 [![Build Status](https://scrutinizer-ci.com/g/canax/session/badges/build.png?b=master)](https://scrutinizer-ci.com/g/canax/session/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/canax/session/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/canax/session/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/canax/session/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/canax/session/?branch=master)
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/e473b0fe-4daf-492a-b228-33a25a4d9d8a/mini.png)](https://insight.sensiolabs.com/projects/e473b0fe-4daf-492a-b228-33a25a4d9d8a)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/da3fd60b-900c-465a-b925-e3a361d25dbe/mini.png)](https://insight.sensiolabs.com/projects/da3fd60b-900c-465a-b925-e3a361d25dbe)
 
 Anax Session module.
 
