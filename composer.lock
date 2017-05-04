@@ -1,0 +1,66 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "73e8b68296a4cdabe999d12e40f3b206",
+    "packages": [],
+    "packages-dev": [
+        {
+            "name": "anax/configure",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/canax/configure.git",
+                "reference": "fdcac4f818c0331a06c83740e7eba99e2306ee9f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/canax/configure/zipball/fdcac4f818c0331a06c83740e7eba99e2306ee9f",
+                "reference": "fdcac4f818c0331a06c83740e7eba99e2306ee9f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Anax\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mikael Roos",
+                    "email": "mos@dbwebb.se",
+                    "homepage": "https://dbwebb.se",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Anax Configure module for reading config files.",
+            "homepage": "https://dbwebb.se/anax",
+            "keywords": [
+                "boilerplate",
+                "education",
+                "framework",
+                "micro",
+                "mvc"
+            ],
+            "time": "2017-05-04T08:43:29+00:00"
+        }
+    ],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=5.6"
+    },
+    "platform-dev": []
+}
