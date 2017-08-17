@@ -120,7 +120,9 @@ class Session
      */
     public function delete($key)
     {
-        unset($_SESSION[$key]);
+        if (isset($_SESSION[$key])) {
+            unset($_SESSION[$key]);
+        }
         return $this;
     }
 
