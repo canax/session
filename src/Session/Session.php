@@ -24,13 +24,15 @@ class Session
 
 
     /**
-     * Start the session.
+     * Start the session (ignore when on cli).
      *
      * @return self
      */
     public function start()
     {
-        session_start();
+        if (php_sapi_name() !== 'cli') {
+            session_start();
+        }
         return $this;
     }
 
