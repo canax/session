@@ -3,9 +3,9 @@
 namespace Anax\Session;
 
 /**
- * Class for wrapping sessions.
+ * Interface for classes wrapping sessions.
  */
-class Session implements SessionInterface
+interface SessionInterface
 {
     /**
      * Set a session name.
@@ -14,11 +14,7 @@ class Session implements SessionInterface
      *
      * @return self
      */
-    public function name($name)
-    {
-        session_name($name);
-        return $this;
-    }
+    public function name($name);
 
 
 
@@ -27,13 +23,7 @@ class Session implements SessionInterface
      *
      * @return self
      */
-    public function start()
-    {
-        if (php_sapi_name() !== 'cli') {
-            session_start();
-        }
-        return $this;
-    }
+    public function start();
 
 
 
@@ -46,10 +36,7 @@ class Session implements SessionInterface
      *
      * @SuppressWarnings(PHPMD.Superglobals)
      */
-    public function has($key)
-    {
-        return isset($_SESSION) && isset($_SESSION[$key]);
-    }
+    public function has($key);
 
 
 
@@ -64,12 +51,7 @@ class Session implements SessionInterface
      *
      * @SuppressWarnings(PHPMD.Superglobals)
      */
-    public function get($key, $default = null)
-    {
-        return $this->has($key)
-            ? $_SESSION[$key]
-            : $default;
-    }
+    public function get($key, $default = null);
 
 
 
@@ -83,12 +65,7 @@ class Session implements SessionInterface
      *
      * @return mixed value from session and null if not set.
      */
-    public function getOnce($key, $default = null)
-    {
-        $read = $this->get($key, $default);
-        $this->delete($key);
-        return $read;
-    }
+    public function getOnce($key, $default = null);
 
 
 
@@ -102,11 +79,7 @@ class Session implements SessionInterface
      *
      * @SuppressWarnings(PHPMD.Superglobals)
      */
-    public function set($key, $value)
-    {
-        $_SESSION[$key] = $value;
-        return $this;
-    }
+    public function set($key, $value);
 
 
 
@@ -119,13 +92,7 @@ class Session implements SessionInterface
      *
      * @SuppressWarnings(PHPMD.Superglobals)
      */
-    public function delete($key)
-    {
-        if (isset($_SESSION[$key])) {
-            unset($_SESSION[$key]);
-        }
-        return $this;
-    }
+    public function delete($key);
 
 
 
@@ -136,26 +103,5 @@ class Session implements SessionInterface
      *
      * @SuppressWarnings(PHPMD.Superglobals)
      */
-    public function destroy()
-    {
-        // Unset all of the session variables.
-        $_SESSION = array();
-
-        // Delete the session cookie.
-        if (ini_get("session.use_cookies")) {
-            $params = session_get_cookie_params();
-            setcookie(
-                session_name(),
-                '',
-                time() - 42000,
-                $params["path"],
-                $params["domain"],
-                $params["secure"],
-                $params["httponly"]
-            );
-        }
-
-        // Finally, destroy the session.
-        session_destroy();
-    }
+    public function destroy();
 }
