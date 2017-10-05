@@ -14,7 +14,7 @@ class SessionTest extends \PHPUnit_Framework_TestCase
     public function testSetName()
     {
         $session = new Session();
-    
+
         $name = "someName";
         $session->name($name);
         $this->assertEquals($name, session_name(), "Session name does not match.");
