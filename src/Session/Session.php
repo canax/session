@@ -89,6 +89,21 @@ class Session implements SessionInterface
         $this->delete($key);
         return $read;
     }
+    
+    
+    
+    /**
+     * var_dumps the session.
+     *
+     * @return array array from session
+     *
+     * @SuppressWarnings(PHPMD.Superglobals)
+     */
+    public function dumpSession()
+    {
+        $data = var_dump($_SESSION);
+        return $data;
+    }
 
 
 
