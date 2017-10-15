@@ -1,10 +1,17 @@
 Revision history
 =================================
 
+
+v1.0.6 (2017-10-15)
+---------------------------------
+
+* Enable destroy() to work on cli, useful for unit testing.
+
+
 v1.0.5 (2017-10-05)
 ---------------------------------
 
-* Added __debugInfo() to enable var_dump() of the session object.
+* Added debugInfo() to enable var_dump() of the session object.
 
 
 v1.0.4 (2017-10-02)

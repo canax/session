@@ -130,7 +130,7 @@ class Session implements SessionInterface
 
 
     /**
-     * Destroy the session.
+     * Destroy the session (works even on cli).
      *
      * @return void
      *
@@ -142,7 +142,9 @@ class Session implements SessionInterface
         $_SESSION = array();
 
         // Delete the session cookie.
-        if (ini_get("session.use_cookies")) {
+        if (php_sapi_name() !== 'cli'
+            && ini_get("session.use_cookies")
+        ) {
             $params = session_get_cookie_params();
             setcookie(
                 session_name(),
@@ -156,7 +158,9 @@ class Session implements SessionInterface
         }
 
         // Finally, destroy the session.
-        session_destroy();
+        if (php_sapi_name() !== 'cli') {
+            session_destroy();
+        }
     }
 
 
