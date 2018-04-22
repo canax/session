@@ -5,7 +5,7 @@ Revision history
 v1.0.* (2018-04-22)
 ---------------------------------
 
-* Make pass scrutinizer by unstalling phpunit.
+* Make pass scrutinizer by installing phpunit.
 
 
 v1.0.7 (2018-04-16)
