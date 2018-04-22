@@ -15,6 +15,8 @@ Anax Session
 
 Anax Session module, for wrapping the session and providing useful helpers related to the session.
 
+The Session module is prepared wo be used for unit testing when run in CLI environment.
+
 
 
 Table of content
@@ -23,6 +25,7 @@ Table of content
 * [Class, interface, trait](#Class-interface-trait)
 * [Configuration file](#Configuration-file)
 * [DI service](#DI-service)
+* [Access as framework service](#Access-as-framework-service)
 * [Start the session](#Start-the-session)
 * [Work with session variables](#Work-with-session-variables)
 * [Session flash messages](#Session-flash-messages)
@@ -34,7 +37,7 @@ Table of content
 Class, interface, trait
 ------------------
 
-The following classes and interfaces exists.
+The following classes, interfaces and traits exists.
 
 | Class, interface, trait            | Description |
 |------------------------------------|-------------|
@@ -83,14 +86,38 @@ The session is created as a framework service within `$di`. The following is a s
 ],
 ```
 
+1. The object is created.
+1. The configuration file is read and applied.
+1. The session is started.
+
 The service is lazy loaded and not created until it is used.
+
+
+
+Access as framework service
+------------------
+
+You can access the module as a framework service.
+
+```php
+# $app style
+$app->session->start();
+
+# $di style, two alternatives
+$di->get("session")->start();
+
+$session = $di->get("session");
+$session->start();
+```
 
 
 
 Start the session
 ------------------
 
-You can start the session any where. But a good place would be the frontkontroller `index.php`, after you have created `$di` and `$app`. Then the session will be available for all page requests.
+You can start the session anywhere by accessing it which makes it load as a service in the framework.
+
+A good place to do this is in the frontkontroller `index.php`, after you have created `$di` (and `$app`). The session will then be available for all page requests, since its started when its loaded in `$di`.
 
 You start the session by accessing it.
 
