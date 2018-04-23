@@ -11,6 +11,7 @@ Anax Session
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/canax/session/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/canax/session/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/canax/session/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/canax/session/?branch=master)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/564636378b4f1c14132f/maintainability)](https://codeclimate.com/github/canax/session/maintainability)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/da3fd60b-900c-465a-b925-e3a361d25dbe/mini.png)](https://insight.sensiolabs.com/projects/da3fd60b-900c-465a-b925-e3a361d25dbe)
 
 Anax Session module, for wrapping the session and providing useful helpers related to the session.
@@ -22,15 +23,15 @@ The Session module is prepared wo be used for unit testing when run in CLI envir
 Table of content
 ------------------
 
-* [Class, interface, trait](#Class-interface-trait)
-* [Configuration file](#Configuration-file)
-* [DI service](#DI-service)
-* [Access as framework service](#Access-as-framework-service)
-* [Start the session](#Start-the-session)
-* [Work with session variables](#Work-with-session-variables)
-* [Session flash messages](#Session-flash-messages)
-* [Debug the session](#Debug-the-session)
-* [Destroy the session](#Destroy-the-session)
+* [Class, interface, trait](#class-interface-trait)
+* [Configuration file](#configuration-file)
+* [DI service](#di-service)
+* [Access as framework service](#access-as-framework-service)
+* [Start the session](#start-the-session)
+* [Work with session variables](#work-with-session-variables)
+* [Session flash messages](#session-flash-messages)
+* [Debug the session](#debug-the-session)
+* [Destroy the session](#destroy-the-session)
 
 
 
