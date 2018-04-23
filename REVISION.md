@@ -2,13 +2,14 @@ Revision history
 =================================
 
 
-v1.0.* (2018-04-22)
+v1.0.9 (2018-04-23)
 ---------------------------------
 
+* Add badge for Codeclimate.
 * Make pass scrutinizer by installing phpunit.
 
 
-v1.0.7 (2018-04-16)
+v1.0.8 (2018-04-16)
 ---------------------------------
 
 * Add documentation to README.
