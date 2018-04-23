@@ -12,6 +12,7 @@ Anax Session
 [![Code Coverage](https://scrutinizer-ci.com/g/canax/session/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/canax/session/?branch=master)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/564636378b4f1c14132f/maintainability)](https://codeclimate.com/github/canax/session/maintainability)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4e942efed3f741db94c027d2f145d129)](https://www.codacy.com/app/mosbth/session?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=canax/session&amp;utm_campaign=Badge_Grade)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/da3fd60b-900c-465a-b925-e3a361d25dbe/mini.png)](https://insight.sensiolabs.com/projects/da3fd60b-900c-465a-b925-e3a361d25dbe)
 
 Anax Session module, for wrapping the session and providing useful helpers related to the session.
