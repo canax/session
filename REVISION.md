@@ -6,6 +6,7 @@ v1.0.* (2018-04-23)
 ---------------------------------
 
 * Added Codacy badge.
+* Adding service in config/di/session.php.
 
 
 
