@@ -2,11 +2,13 @@ Revision history
 =================================
 
 
-v1.0.* (2018-04-23)
+v1.0.10 (2018-04-25)
 ---------------------------------
 
 * Added Codacy badge.
 * Adding service in config/di/session.php.
+* Avoid starting the session within the $di callback initiating phase.
+* README states that the session should be started using $session->start() within index.php.
 
 
 

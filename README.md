@@ -84,7 +84,7 @@ The session is created as a framework service within `$di`. The following is a s
 ```php
 <?php
 /**
- * Configuration file for database service.
+ * Configuration file for session service.
  */
 return [
     // Services to add to the container.
@@ -92,9 +92,9 @@ return [
         "session" => [
             "shared" => true,
             "callback" => function () {
-                $session = new \Anax\Session\SessionConfigurable();
-                $session->configure("session.php");
-                return $session;
+                $obj = new \Anax\Session\SessionConfigurable();
+                $obj->configure("session.php");
+                return $obj;
             }
         ],
     ],
@@ -103,7 +103,6 @@ return [
 
 1. The object is created.
 1. The configuration file is read and applied.
-1. The session is started.
 
 The service is lazy loaded and not created until it is used.
 
@@ -130,15 +129,13 @@ $session->start();
 Start the session
 ------------------
 
-You can start the session anywhere by accessing it which makes it load as a service in the framework.
-
-A good place to do this is in the frontkontroller `index.php`, after you have created `$di` (and `$app`). The session will then be available for all page requests, since its started when its loaded in `$di`.
+You can start the session anywhere. A good place to do this is in the frontkontroller `index.php`, after you have created `$di` (and `$app`). The session will then be available for all page requests.
 
 You start the session by accessing it.
 
 ```php
 # $app style
-$app->session();
+$app->session->start();
 ```
 
 The session will not start when running in CLI (for example PHPUnit), but it will still be active and usable.

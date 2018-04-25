@@ -1,6 +1,6 @@
 <?php
 /**
- * Configuration file for database service.
+ * Configuration file for session service.
  */
 return [
     // Services to add to the container.
@@ -8,9 +8,9 @@ return [
         "session" => [
             "shared" => true,
             "callback" => function () {
-                $session = new \Anax\Session\SessionConfigurable();
-                $session->configure("session.php");
-                return $session;
+                $obj = new \Anax\Session\SessionConfigurable();
+                $obj->configure("session.php");
+                return $obj;
             }
         ],
     ],
