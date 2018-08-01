@@ -208,7 +208,7 @@ $app->session->destroy();
 License
 ------------------
 
-This software carries a MIT license.
+This software carries a MIT license. See [LICENSE.txt](LICENSE.txt) for details.
 
 
 

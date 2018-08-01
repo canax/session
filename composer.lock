@@ -1,28 +1,28 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "73e8b68296a4cdabe999d12e40f3b206",
+    "content-hash": "1d2f81550496bba40741ac84623ccc38",
     "packages": [],
     "packages-dev": [
         {
             "name": "anax/configure",
-            "version": "v1.0.0",
+            "version": "v2.0.0-alpha.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/canax/configure.git",
-                "reference": "fdcac4f818c0331a06c83740e7eba99e2306ee9f"
+                "reference": "0b2272d81a23819e5d4e2a598de5b743333c743a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/canax/configure/zipball/fdcac4f818c0331a06c83740e7eba99e2306ee9f",
-                "reference": "fdcac4f818c0331a06c83740e7eba99e2306ee9f",
+                "url": "https://api.github.com/repos/canax/configure/zipball/0b2272d81a23819e5d4e2a598de5b743333c743a",
+                "reference": "0b2272d81a23819e5d4e2a598de5b743333c743a",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6"
+                "php": ">=7.2"
             },
             "type": "library",
             "autoload": {
@@ -51,16 +51,18 @@
                 "micro",
                 "mvc"
             ],
-            "time": "2017-05-04T08:43:29+00:00"
+            "time": "2018-08-01T14:18:36+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "anax/configure": 15
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=5.6"
+        "php": "^7.2"
     },
     "platform-dev": []
 }

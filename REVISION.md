@@ -2,6 +2,13 @@ Revision history
 =================================
 
 
+v2.0.0-alpha.1 (2018-08-01)
+---------------------------------
+
+* Prepare to go through code and remove some waist and potentially breaking backward compatibility.
+
+
+
 v1.0.10 (2018-04-25)
 ---------------------------------
 
