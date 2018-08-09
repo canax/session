@@ -16,7 +16,9 @@ class Session implements SessionInterface
      */
     public function name($name)
     {
-        session_name($name);
+        if (php_sapi_name() !== 'cli') {
+            session_name($name);
+        }
         return $this;
     }
 
@@ -139,7 +141,7 @@ class Session implements SessionInterface
     public function destroy()
     {
         // Unset all of the session variables.
-        $_SESSION = array();
+        $_SESSION = [];
 
         // Delete the session cookie.
         if (php_sapi_name() !== 'cli'

@@ -9,17 +9,17 @@ use \PHPUnit\Framework\TestCase;
  */
 class SessionTest extends TestCase
 {
-    // /**
-    //  * Set the name of the session
-    //  */
-    // public function testSetName()
-    // {
-    //     $session = new Session();
-    //
-    //     $name = "someName";
-    //     $session->name($name);
-    //     $this->assertEquals($name, session_name(), "Session name does not match.");
-    // }
+    /**
+     * Set the name of the session
+     */
+    public function testSetName()
+    {
+        $session = new Session();
+    
+        $name = "someName";
+        $session->name($name);
+        $this->assertTrue(true);
+    }
 
 
 
@@ -47,7 +47,7 @@ class SessionTest extends TestCase
 
 
     /**
-     * Test
+     * Test getOnce()
      */
     public function testGetOnce()
     {
@@ -59,5 +59,37 @@ class SessionTest extends TestCase
 
         $ret = $session->get("key");
         $this->assertNull($ret, "Session should return null for this entry.");
+    }
+
+
+
+    /**
+     * Test magic method __debugInfo()
+     */
+    public function testDebugInfo()
+    {
+        $session = new Session();
+    
+        $res = $session->__debugInfo();
+        $this->assertInternalType("array", $res);
+        $this->assertEmpty($res);
+        $this->assertEquals($res, $_SESSION);
+    }
+
+
+
+    /**
+     * Destroy the session
+     */
+    public function testDestroySession()
+    {
+        $session = new Session();
+
+        $session->set("key", "value");
+        $res = $session->get("key");
+        $this->assertEquals("value", $res);
+
+        $session->destroy();
+        $this->assertEmpty($_SESSION);
     }
 }

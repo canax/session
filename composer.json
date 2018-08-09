@@ -28,6 +28,7 @@
         "anax/configure": "^2.0.0@alpha"
     },
     "require-dev": {
-        "anax/configure": "^2.0.0@alpha"
+        "anax/configure": "^2.0.0@alpha",
+        "anax/di": "^2.0.0@alpha"
     }
 }
