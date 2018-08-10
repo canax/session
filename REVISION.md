@@ -2,6 +2,13 @@ Revision history
 =================================
 
 
+v2.0.0-alpha.3 (2018-08-10)
+---------------------------------
+
+* Fix return value from Session::debugInfo() when sessionis not defined.
+
+
+
 v2.0.0-alpha.2 (2018-08-08)
 ---------------------------------
 

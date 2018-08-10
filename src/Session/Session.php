@@ -174,8 +174,8 @@ class Session implements SessionInterface
      *
      * @SuppressWarnings(PHPMD.Superglobals)
      */
-    public function __debugInfo()
+    public function __debugInfo() : ?array
     {
-        return $_SESSION;
+        return $_SESSION ?? null;
     }
 }
