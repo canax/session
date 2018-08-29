@@ -6,7 +6,7 @@ return [
     // Services to add to the container.
     "services" => [
         "session" => [
-            "active" => constant("ANAX_WITH_SESSION") // true|false
+            "active" => defined("ANAX_WITH_SESSION") && ANAX_WITH_SESSION, // true|false
             "shared" => true,
             "callback" => function () {
                 $session = new \Anax\Session\Session();
