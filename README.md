@@ -45,7 +45,6 @@ The following classes, interfaces and traits exists.
 |------------------------------------|-------------|
 | `Anax\Session\Session`             | Wrapper class for sessions. |
 | `Anax\Session\SessionInterface`    | Interface to implement for classes what want to wrap the session. |
-| `Anax\Session\SessionConfigurable` | Extending wrapper class with ability to read its configuration from a file. |
 
 
 
@@ -62,14 +61,13 @@ Configuration file
 This is a sample configuration file, it is usually stored in `config/session.php`.
 
 ```php
-<?php
 /**
  * Config-file for sessions.
  */
 return [
     // Session name
-    //"name" => preg_replace("/[^a-z\d]/i", "", __DIR__),
-    "name" => preg_replace("/[^a-z\d]/i", "", ANAX_APP_PATH),
+    "name" => preg_replace("/[^a-z\d]/i", "", __DIR__),
+    //"name" => preg_replace("/[^a-z\d]/i", "", ANAX_APP_PATH),
 ];
 ```
 
@@ -81,29 +79,49 @@ DI service
 The session is created as a framework service within `$di`. The following is a sample on how the session service is created.
 
 ```php
-<?php
 /**
- * Configuration file for session service.
+ * Creating the session as a $di service.
  */
 return [
     // Services to add to the container.
     "services" => [
         "session" => [
+            "active" => defined("ANAX_WITH_SESSION") && ANAX_WITH_SESSION, // true|false
             "shared" => true,
             "callback" => function () {
-                $obj = new \Anax\Session\SessionConfigurable();
-                $obj->configure("session.php");
-                return $obj;
+                $session = new \Anax\Session\Session();
+
+                // Load the configuration files
+                $cfg = $this->get("configuration");
+                $config = $cfg->load("session");
+
+                // Set session name
+                $name = $config["config"]["name"] ?? null;
+                if (is_string($name)) {
+                    $session->name($name);
+                }
+
+                $session->start();
+
+                return $session;
             }
         ],
     ],
 ];
 ```
 
-1. The object is created.
-1. The configuration file is read and applied.
+The session can always be active, in the default configuration file this is depending on the PHP define `ANAX_WITH_SESSION` which is usually set in `config/commons.php` which is available from the module `anax/commons`.
 
-The service is lazy loaded and not created until it is used.
+The session is always started when `ANAX_WITH_SESSION` is defined and `true`. 
+
+This is how the callback works, when it creates the session service.
+
+1. The object is created.
+1. The configuration file, usually `config/session.php`, is read.
+1. The session is named.
+1. The session is created.
+
+The service is lazy loaded and not created until it is used. However, it is always loaded when `"active" => true`.
 
 
 
@@ -128,16 +146,13 @@ $session->start();
 Start the session
 ------------------
 
-You can start the session anywhere. A good place to do this is in the frontkontroller `index.php`, after you have created `$di` (and `$app`). The session will then be available for all page requests.
+The recommended way, and the default behaviour, is to start the session by defining `ANAX_WITH_SESSION` and set it to `true`. This is usually done in `config/commons.php` which source is available in the module `anax/commons`.
 
-You start the session by accessing it.
+Setting `ANAX_WITH_SESSION` to `false` means that the session is not started by default.
 
-```php
-# $app style
-$app->session->start();
-```
+As an alternative, you can start the session anywhere by activating (using) the di service. A good place to do this is in the frontkontroller `index.php`, after you have created `$di` (and `$app`). The session will then be available for all page requests.
 
-The session will not start when running in CLI (for example PHPUnit), but it will still be active and usable.
+The session will not start when running in CLI (for example PHPUnit), however, it will still be active and usable as means of unit testing.
 
 
 
@@ -213,5 +228,5 @@ This software carries a MIT license. See [LICENSE.txt](LICENSE.txt) for details.
 
 ```
  .  
-..:  Copyright (c) 2013 - 2018 Mikael Roos, mos@dbwebb.se
+..:  Copyright (c) 2013 - 2019 Mikael Roos, mos@dbwebb.se
 ```

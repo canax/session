@@ -9,6 +9,7 @@ v2.0.0 (2019-04-23)
 * Add docker-compose.yml to test in docker.
 * Update phpmd config to ignore $di.
 * Remove Sensiolabs badge.
+* Updated README.
 
 
 
