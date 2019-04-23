@@ -2,6 +2,16 @@ Revision history
 =================================
 
 
+v2.0.0 (2019-04-23)
+---------------------------------
+
+* Tag as v2.
+* Add docker-compose.yml to test in docker.
+* Update phpmd config to ignore $di.
+* Remove Sensiolabs badge.
+
+
+
 v2.0.0-beta.3 (2018-08-29)
 ---------------------------------
 
