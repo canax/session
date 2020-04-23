@@ -2,6 +2,14 @@ Revision history
 =================================
 
 
+v2.0.2 (2020-04-23)
+---------------------------------
+
+* Update Makefile to latest from anax/commons.
+* Add asserts in testcase for destroying session.
+
+
+
 v2.0.1 (2019-04-24)
 ---------------------------------
 

@@ -15,7 +15,7 @@ class SessionTest extends TestCase
     public function testSetName()
     {
         $session = new Session();
-    
+
         $name = "someName";
         $session->name($name);
         $this->assertTrue(true);
@@ -69,7 +69,7 @@ class SessionTest extends TestCase
     public function testDebugInfo()
     {
         $session = new Session();
-    
+
         $res = $session->__debugInfo();
         $this->assertInternalType("array", $res);
         $this->assertEmpty($res);
@@ -91,5 +91,11 @@ class SessionTest extends TestCase
 
         $session->destroy();
         $this->assertEmpty($_SESSION);
+
+        $res = $session->get("key", "default");
+        $this->assertEquals("default", $res);
+
+        $res = $session->get("key");
+        $this->assertNull($res);
     }
 }
